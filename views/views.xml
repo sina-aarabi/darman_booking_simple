@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="darman_booking_simple.list">
+      <field name="name">darman_booking_simple list</field>
+      <field name="model">darman_booking_simple.darman_booking_simple</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="darman_booking_simple.action_window">
+      <field name="name">darman_booking_simple window</field>
+      <field name="res_model">darman_booking_simple.darman_booking_simple</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="darman_booking_simple.action_server">
+      <field name="name">darman_booking_simple server</field>
+      <field name="model_id" ref="model_darman_booking_simple_darman_booking_simple"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="darman_booking_simple" id="darman_booking_simple.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="darman_booking_simple.menu_1" parent="darman_booking_simple.menu_root"/>
+    <menuitem name="Menu 2" id="darman_booking_simple.menu_2" parent="darman_booking_simple.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="darman_booking_simple.menu_1_list" parent="darman_booking_simple.menu_1"
+              action="darman_booking_simple.action_window"/>
+    <menuitem name="Server to list" id="darman_booking_simple" parent="darman_booking_simple.menu_2"
+              action="darman_booking_simple.action_server"/>
+-->
+  </data>
+</odoo>

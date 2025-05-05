@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="darman_booking_simple.model_darman_booking" model="ir.model">
+            <field name="website_form_key">simple_booking</field>
+            <!-- <field name="website_form_default_field_id" ref="darman_booking_simple.field_booking__description" /> -->
+            <field name="website_form_access">True</field>
+            <field name="website_form_label">Booking</field>
+        </record>
+
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>darman.booking</value>
+            <value eval="[
+                'name',
+                'mobile',
+                'start_date',
+                'end_date',
+            ]"/>
+        </function>
+
+</odoo>
