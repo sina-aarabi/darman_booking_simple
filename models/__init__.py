@@ -2,3 +2,4 @@
 
 from . import models
 from . import booking
+from . import res_partner

@@ -26,6 +26,7 @@ Long description of module's purpose
         'views/views.xml',
         'views/templates.xml',
         'views/booking_view.xml',
+        'views/res_partner_views.xml',
         'data/website_booking_data.xml'
     ],
     'assets': {

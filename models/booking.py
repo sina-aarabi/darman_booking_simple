@@ -23,6 +23,12 @@ class DarmanBooking(models.Model):
         tracking=True  # Enable tracking for the state field
     )
     description = fields.Text(string='Description')  # New description field
+    partner_type = fields.Selection(
+        related='partner_id.partner_type',
+        string='نوع همکار',
+        store=True,
+        readonly=True
+    )
 
     @api.depends('partner_id')
     def _compute_partner_details(self):
@@ -30,17 +36,4 @@ class DarmanBooking(models.Model):
             record.name = record.partner_id.name if record.partner_id else ''
             record.mobile = record.partner_id.mobile if record.partner_id else ''
 
-    @api.model
-    def create(self, vals):
-        # Custom logic before creating the record
-        if 'description' in vals and not vals['description']:
-            vals['description'] = 'No description provided.'
-        
-        # Call the super method to create the record
-        record = super(DarmanBooking, self).create(vals)
-        
-        # Custom logic after creating the record
-        # Example: Log a message
-        record.message_post(body="Booking record created successfully.")
-        
-        return record
+   
