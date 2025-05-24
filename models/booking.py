@@ -29,6 +29,23 @@ class DarmanBooking(models.Model):
         store=True,
         readonly=True
     )
+    number_of_people = fields.Integer(
+        string='Number of People',
+        required=True,
+        default=1,
+        tracking=True,
+        help='Total number of guests for this booking'
+    )
+    age_range = fields.Selection([
+        ('adult', 'Adult (12+ years)'),
+        ('child', 'Child (2-11 years)'),
+        ('infant', 'Infant (0-2 years)')
+    ], string='Age Range',
+        required=True,
+        default='adult',
+        tracking=True,
+        help='Select the age range for pricing and bed arrangements'
+    )
 
     @api.depends('partner_id')
     def _compute_partner_details(self):
@@ -36,4 +53,3 @@ class DarmanBooking(models.Model):
             record.name = record.partner_id.name if record.partner_id else ''
             record.mobile = record.partner_id.mobile if record.partner_id else ''
 
-   
