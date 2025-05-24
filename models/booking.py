@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 class DarmanBooking(models.Model):
     _name = 'darman.booking'
@@ -29,22 +30,34 @@ class DarmanBooking(models.Model):
         store=True,
         readonly=True
     )
-    number_of_people = fields.Integer(
-        string='Number of People',
+
+    adult_count = fields.Integer(
+        string='Adults (12+ years)',
         required=True,
         default=1,
         tracking=True,
-        help='Total number of guests for this booking'
+        help='Number of adults (12 years and older)'
     )
-    age_range = fields.Selection([
-        ('adult', 'Adult (12+ years)'),
-        ('child', 'Child (2-11 years)'),
-        ('infant', 'Infant (0-2 years)')
-    ], string='Age Range',
-        required=True,
-        default='adult',
+    
+    child_count = fields.Integer(
+        string='Children (2-11 years)',
+        default=0,
         tracking=True,
-        help='Select the age range for pricing and bed arrangements'
+        help='Number of children (between 2 and 11 years)'
+    )
+    
+    infant_count = fields.Integer(
+        string='Infants (0-2 years)',
+        default=0,
+        tracking=True,
+        help='Number of infants (under 2 years)'
+    )
+    
+    total_guests = fields.Integer(
+        string='Total Guests',
+        compute='_compute_total_guests',
+        store=True,
+        help='Total number of guests'
     )
 
     @api.depends('partner_id')
@@ -52,4 +65,19 @@ class DarmanBooking(models.Model):
         for record in self:
             record.name = record.partner_id.name if record.partner_id else ''
             record.mobile = record.partner_id.mobile if record.partner_id else ''
+
+    @api.depends('adult_count', 'child_count', 'infant_count')
+    def _compute_total_guests(self):
+        for record in self:
+            record.total_guests = record.adult_count + record.child_count + record.infant_count
+
+    @api.constrains('adult_count', 'child_count', 'infant_count')
+    def _check_guest_counts(self):
+        for record in self:
+            if record.adult_count < 1:
+                raise ValidationError(_('At least one adult is required'))
+            if any(count < 0 for count in [record.adult_count, record.child_count, record.infant_count]):
+                raise ValidationError(_('Number of guests cannot be negative'))
+            if record.total_guests > 10:
+                raise ValidationError(_('Maximum 10 guests allowed per booking'))
 

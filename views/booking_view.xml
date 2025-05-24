@@ -10,6 +10,7 @@
                 <field name="partner_type"/>
                 <field name="start_date"/>
                 <field name="end_date"/>
+                <field name="total_guests"/>
                 <field name="state"/>
             </list>
         </field>
@@ -35,9 +36,11 @@
                             <field name="start_date"/>
                             <field name="end_date"/>
                         </group>
-                        <group>
-                            <field name="number_of_people"/>
-                            <field name="age_range"/>
+                        <group string="Guest Information">
+                            <field name="adult_count"/>
+                            <field name="child_count"/>
+                            <field name="infant_count"/>
+                            <field name="total_guests"/>
                         </group>
                         <group>
                             <field name="description" widget="text" placeholder="Description"/>

@@ -41,22 +41,25 @@ FormEditorRegistry.add('simple_booking', {
         }, {
             type: 'integer',
             required: true,
-            name: 'number_of_people',
-            string: _t('Number of People'),
+            name: 'adult_count',
+            string: _t('Adults (12+ years)'),
             defaultValue: 1,
             min: 1,
             max: 10
         }, {
-            type: 'selection',
-            required: true,
-            name: 'age_range',
-            string: _t('Age Range'),
-            selection: [
-                ['adult', _t('Adult (12+ years)')],
-                ['child', _t('Child (2-11 years)')],
-                ['infant', _t('Infant (0-2 years)')]
-            ],
-            defaultValue: 'adult'
+            type: 'integer',
+            name: 'child_count',
+            string: _t('Children (2-11 years)'),
+            defaultValue: 0,
+            min: 0,
+            max: 9
+        }, {
+            type: 'integer',
+            name: 'infant_count',
+            string: _t('Infants (0-2 years)'),
+            defaultValue: 0,
+            min: 0,
+            max: 9
         }, {
             type: 'text',
             name: 'description',
