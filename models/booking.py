@@ -1,5 +1,5 @@
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, UserError
 
 class DarmanBooking(models.Model):
     _name = 'darman.booking'
@@ -80,4 +80,59 @@ class DarmanBooking(models.Model):
                 raise ValidationError(_('Number of guests cannot be negative'))
             if record.total_guests > 10:
                 raise ValidationError(_('Maximum 10 guests allowed per booking'))
+
+    def action_send_invoice(self):
+        self.ensure_one()
+        user = self.partner_id.user_ids and self.partner_id.user_ids[0] or None
+        # Read mobile number from user (prefer user.partner mobile), fallback to booking mobile
+        mobile = getattr(user, 'mobile', False) or getattr(user.partner_id, 'mobile', False) or self.mobile
+        pod_user_id = getattr(user, 'pod_user_id', False)
+
+        if not mobile:
+            raise ValidationError(_('User mobile number is required to send invoice'))
+        if not pod_user_id:
+            raise ValidationError(_('User POD User ID (pod_user_id) is not set'))
+
+        # Retrieve the invoice issuance service
+        service = self.env.ref('daarman_api.invoice_issuance', raise_if_not_found=False)
+        if not service:
+            raise UserError(_('Service "invoice_issuance" not found. Update the daarman_api module.'))
+
+        # Build request payload based on service sample structure
+        request_data = {
+            "apiKey": "",
+            "productEntityId": "",
+            "providerParameters": {
+                "body": {
+                    "products": [311681],
+                    "quantities": [1],
+                    "paymentType": "sms",
+                    "Mobile": mobile,
+                    "guildCode": "TOURISM_GUILD",
+                    "userId": str(pod_user_id),
+                },
+                "Client-Id": "676ccqa26c4dd390c6dbf690c42626",
+                "Access-Token": "6175279446-6d2c1e0a75324f43a3c0e0c6af07cabb.XzIwMjU1",
+                "invoiceTypeUniqueId": "hotel-flight",
+            },
+        }
+
+        # Send via helper method on daarman.service
+        response = service.call(data=request_data)
+
+        # Log to chatter and notify user
+        ref = response.get('referenceNumber', '') if isinstance(response, dict) else ''
+        message = _('Invoice issuance requested% s') % (f' (Ref: {ref})' if ref else '')
+        self.message_post(body=message)
+
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': _('Success'),
+                'message': message,
+                'type': 'success',
+                'sticky': False,
+            }
+        }
 

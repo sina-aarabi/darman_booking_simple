@@ -20,5 +20,197 @@
           </dl>
         </template>
 -->
+    <!-- Portal: Add Booking tile on My Account -->
+        <template id="portal_my_home_booking" name="Booking" inherit_id="portal.portal_my_home" customize_show="True" priority="70">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="before">
+                <t t-set="portal_client_category_enable" t-value="True"/>
+            </xpath>
+            <div id="portal_client_category" position="inside">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="icon" t-value="'/darman_booking_simple/static/src/img/booking_travel.svg'"/>
+                    <t t-set="title">Book Flight &amp; Hotel</t>
+                    <t t-set="url" t-value="'/my/booking'"/>
+                    <t t-set="text">Create a simple booking request</t>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+            </div>
+        </template>
+
+        <!-- Website Page: Simple Booking (portal layout) -->
+        <record id="website_page_portal_simple_booking" model="website.page">
+            <field name="name">Simple Booking</field>
+            <field name="url">/my/booking</field>
+            <field name="website_published" eval="True"/>
+            <field name="type">qweb</field>
+            <field name="arch" type="xml">
+                <t t-call="portal.portal_layout">
+                    <t t-set="additional_title">Simple Booking</t>
+                    <div class="o_portal container">
+                        <div t-if="request.params.get('submitted')" class="alert alert-success" role="status">
+                            Your booking request has been submitted.
+                        </div>
+                        <section class="s_website_form pt16 pb16 o_colored_level" data-vcss="001" data-snippet="s_website_form" data-name="Form">
+                            <div class="container">
+                                <div class="card shadow-sm">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="mb-0">Flight &amp; Hotel Booking</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="simple_booking_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required"
+                                              data-mark="*" data-pre-fill="true" data-model_name="darman.booking" hide-change-model="true"
+                                              data-success-mode="redirect" data-success-page="/my/booking?submitted=1">
+                                            <div class="s_website_form_rows row s_col_no_bgcolor">
+
+                                                <!-- Full Name -->
+                                                <div class="mb-3 col-lg-6 s_website_form_field s_website_form_required" data-type="char" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="booking_name">
+                                                            <span class="s_website_form_label_content">Full Name</span>
+                                                            <span class="s_website_form_mark"> *</span>
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <input id="booking_name" type="text" class="form-control s_website_form_input" name="name" required="1" data-fill-with="name" t-att-value="request.env.user.partner_id.name"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Mobile Number -->
+                                                <div class="mb-3 col-lg-6 s_website_form_field s_website_form_required" data-type="tel" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="booking_mobile">
+                                                            <span class="s_website_form_label_content">Mobile Number</span>
+                                                            <span class="s_website_form_mark"> *</span>
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <input id="booking_mobile" type="tel" class="form-control s_website_form_input" name="mobile" required="1" data-fill-with="phone" t-att-value="request.env.user.partner_id.mobile"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Partner Type (Radio) -->
+                                                <div class="mb-3 col-12 s_website_form_field" data-type="selection" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px">
+                                                            <span class="s_website_form_label_content">Partner Type</span>
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <div class="d-flex flex-wrap gap-3 mt-2">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input s_website_form_input" type="radio" id="pt_fanap" name="partner_type" value="fanap" t-att-checked="request.env.user.partner_id.partner_type == 'fanap' and 'checked' or None"/>
+                                                                    <label class="form-check-label" for="pt_fanap">گروه فناپ</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input s_website_form_input" type="radio" id="pt_pf" name="partner_type" value="pasargad_financial" t-att-checked="request.env.user.partner_id.partner_type == 'pasargad_financial' and 'checked' or None"/>
+                                                                    <label class="form-check-label" for="pt_pf">گروه مالی بانک پاسارگاد</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input s_website_form_input" type="radio" id="pt_pc" name="partner_type" value="pasargad_club" t-att-checked="request.env.user.partner_id.partner_type == 'pasargad_club' and 'checked' or None"/>
+                                                                    <label class="form-check-label" for="pt_pc">باشگاه مشتریان بانک پاسارگاد</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Start Date -->
+                                                <div class="mb-3 col-md-6 s_website_form_field s_website_form_required" data-type="date" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="booking_start_date">
+                                                            <span class="s_website_form_label_content">Start Date</span>
+                                                            <span class="s_website_form_mark"> *</span>
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <div class="s_website_form_date input-group date s_website_form_datepicker_initialized">
+                                                                <input id="booking_start_date" type="text" class="form-control datetimepicker-input s_website_form_input" name="start_date" required="1"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- End Date -->
+                                                <div class="mb-3 col-md-6 s_website_form_field s_website_form_required" data-type="date" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="booking_end_date">
+                                                            <span class="s_website_form_label_content">End Date</span>
+                                                            <span class="s_website_form_mark"> *</span>
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <div class="s_website_form_date input-group date s_website_form_datepicker_initialized">
+                                                                <input id="booking_end_date" type="text" class="form-control datetimepicker-input s_website_form_input" name="end_date" required="1"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Passengers -->
+                                                <div class="mb-3 col-12">
+                                                    <div class="card border-0 bg-light">
+                                                        <div class="card-body">
+                                                            <h6 class="mb-3">Passengers</h6>
+                                                            <div class="row g-2">
+                                                                <div class="col-md-4 s_website_form_field s_website_form_required" data-type="integer">
+                                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="adult_count">
+                                                                            <span class="s_website_form_label_content">Adults (12+)</span>
+                                                                            <span class="s_website_form_mark"> *</span>
+                                                                        </label>
+                                                                        <div class="col-sm">
+                                                                            <input id="adult_count" type="number" min="1" class="form-control s_website_form_input" name="adult_count" required="1" value="1"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 s_website_form_field" data-type="integer">
+                                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="child_count">
+                                                                            <span class="s_website_form_label_content">Children (2-11)</span>
+                                                                        </label>
+                                                                        <div class="col-sm">
+                                                                            <input id="child_count" type="number" min="0" class="form-control s_website_form_input" name="child_count" value="0"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 s_website_form_field" data-type="integer">
+                                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="infant_count">
+                                                                            <span class="s_website_form_label_content">Infants (0-2)</span>
+                                                                        </label>
+                                                                        <div class="col-sm">
+                                                                            <input id="infant_count" type="number" min="0" class="form-control s_website_form_input" name="infant_count" value="0"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Description -->
+                                                <div class="mb-3 col-12 s_website_form_field" data-type="text" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="booking_description">
+                                                            <span class="s_website_form_label_content">Description</span>
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <textarea id="booking_description" class="form-control s_website_form_input" name="description" rows="4" placeholder="Notes, preferences, special requests..."/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Submit -->
+                                                <div class="mb-0 py-2 col-12 s_website_form_submit s_website_form_no_submit_label text-end" data-name="Submit Button">
+                                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                                    <span id="s_website_form_result"/>
+                                                    <a href="#" role="button" class="btn btn-primary s_website_form_send">Submit</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </field>
+        </record>
     </data>
 </odoo>

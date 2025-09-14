@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flight & Hotel">
+  <defs>
+    <style>
+      .plane{fill:#3a86ff}
+      .hotel{fill:#6c757d}
+      .window{fill:#adb5bd}
+      .ground{fill:#dee2e6}
+    </style>
+  </defs>
+  <!-- Ground/Base Line -->
+  <rect class="ground" x="8" y="78" width="80" height="4" rx="2"/>
+
+  <!-- Hotel Building -->
+  <rect class="hotel" x="12" y="30" width="36" height="48" rx="4"/>
+  <rect class="hotel" x="20" y="24" width="20" height="6" rx="2"/>
+  <!-- Windows -->
+  <rect class="window" x="18" y="36" width="8" height="8" rx="1"/>
+  <rect class="window" x="30" y="36" width="8" height="8" rx="1"/>
+  <rect class="window" x="18" y="48" width="8" height="8" rx="1"/>
+  <rect class="window" x="30" y="48" width="8" height="8" rx="1"/>
+  <rect class="window" x="18" y="60" width="8" height="8" rx="1"/>
+  <rect class="window" x="30" y="60" width="8" height="8" rx="1"/>
+
+  <!-- Airplane -->
+  <path class="plane" d="M86 20c-1.8-1.3-5.2-1.1-9 .6l-18 8.2-17.8 1.3c-1.1.1-2 .9-2.3 2L37.9 39l9.1.8-6 3.5-7.8-.7-2.5 6.3 7.4.6-2.9 6.9 6.4.6 4.5-5.8 7.6.6L73 45.7l10.4-17.2c2.2-3.6 3-7.1 2.6-8.5z"/>
+</svg>

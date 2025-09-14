@@ -15,7 +15,10 @@
                 'start_date',
                 'end_date',
                 'description',
-                'partner_type'
+                'partner_type',
+                'adult_count',
+                'child_count',
+                'infant_count'
             ]"/>
         </function>
 
