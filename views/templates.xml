@@ -27,7 +27,7 @@
             </xpath>
             <div id="portal_client_category" position="inside">
                 <t t-call="portal.portal_docs_entry">
-                    <t t-set="icon" t-value="'/darman_booking_simple/static/src/img/booking_travel.svg'"/>
+                    <t t-set="icon" t-value="'/darman_booking_simple/static/src/img/flight-hotel-travel-option.webp'"/>
                     <t t-set="title">Book Flight &amp; Hotel</t>
                     <t t-set="url" t-value="'/my/booking'"/>
                     <t t-set="text">Create a simple booking request</t>
