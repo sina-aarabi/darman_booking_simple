@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20250101\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-24 18:02+0000\n"
-"PO-Revision-Date: 2025-05-24 18:02+0000\n"
+"POT-Creation-Date: 2025-09-17 18:50+0000\n"
+"PO-Revision-Date: 2025-09-17 18:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,29 +16,94 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<span class=\"s_website_form_label_content\">Adults (12+)</span>\n"
+"                                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">بزرگسال (12+)</span>\n"
+"                                                                            <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Children (2-11)</span>"
+msgstr "<span class=\"s_website_form_label_content\">کودک (2-11)</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Description</span>"
+msgstr "<span class=\"s_website_form_label_content\">توضیحات</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<span class=\"s_website_form_label_content\">End Date</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">تاریخ برگشت</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<span class=\"s_website_form_label_content\">Full Name</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">نام و نام خانوادگی</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Infants (0-2)</span>"
+msgstr "<span class=\"s_website_form_label_content\">نوزاد (0-2)</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<span class=\"s_website_form_label_content\">Mobile Number</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">شماره موبایل</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Partner Type</span>"
+msgstr "<span class=\"s_website_form_label_content\">نوع همکار</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<span class=\"s_website_form_label_content\">Start Date</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">تاریخ رفت</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "نیاز به اقدام"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "فعالیت‌ها"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "نماد استثنای فعالیت"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "وضعیت فعالیت"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "آیکون نوع فعالیت"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__adult_count
@@ -48,34 +113,39 @@ msgstr "بزرگسال (12 سال و بالاتر)"
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "تعداد پیوست‌ها"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.portal_my_home_booking
+msgid "Book Flight &amp; Hotel"
+msgstr "رزرو پرواز و هتل"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
 msgid "Booking Form"
-msgstr ""
+msgstr "فرم رزرو"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_list
 msgid "Booking List"
-msgstr ""
+msgstr "لیست رزروها"
 
 #. module: darman_booking_simple
 #: model:ir.model,name:darman_booking_simple.model_darman_booking
 #: model:ir.ui.menu,name:darman_booking_simple.menu_darman_booking_root
 msgid "Booking Management"
-msgstr ""
+msgstr "مدیریت رزرو"
 
 #. module: darman_booking_simple
 #: model:ir.actions.act_window,name:darman_booking_simple.action_darman_booking
 #: model:ir.ui.menu,name:darman_booking_simple.menu_darman_booking
 msgid "Bookings"
-msgstr ""
+msgstr "رزروها"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__state__cancelled
 msgid "Cancelled"
-msgstr ""
+msgstr "لغو شده"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__child_count
@@ -83,9 +153,14 @@ msgid "Children (2-11 years)"
 msgstr "کودک (بین 2 تا 11 سال)"
 
 #. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
+msgid "Confirm"
+msgstr "تایید"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__state__confirmed
 msgid "Confirmed"
-msgstr ""
+msgstr "تایید شده"
 
 #. module: darman_booking_simple
 #: model:ir.model,name:darman_booking_simple.model_res_partner
@@ -93,14 +168,24 @@ msgid "Contact"
 msgstr "مخاطب"
 
 #. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.portal_my_home_booking
+msgid "Create a simple booking request"
+msgstr "ایجاد درخواست رزرو ساده"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "ایجاد شده توسط"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__create_date
 msgid "Created on"
-msgstr ""
+msgstr "ایجاد شده در"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
+msgid "Decline"
+msgstr "رد"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__description
@@ -111,17 +196,17 @@ msgstr "توضیحات"
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "نام نمایشی"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__state__done
 msgid "Done"
-msgstr ""
+msgstr "انجام شده"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "پیش‌نویس"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__end_date
@@ -129,55 +214,60 @@ msgid "End Date"
 msgstr "تاریخ برگشت"
 
 #. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "Flight &amp; Hotel Booking"
+msgstr "رزرو پرواز و هتل"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "دنبال‌کنندگان"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "دنبال‌کنندگان (مخاطبان)"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "آیکون Font Awesome مثلا fa-tasks"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
 msgid "Guest Information"
-msgstr ""
+msgstr "اطلاعات مهمان"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "دارای پیام"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__id
 msgid "ID"
-msgstr ""
+msgstr "شناسه"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "آیکون"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "آیکون برای نشان دادن فعالیت استثنایی."
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "اگر انتخاب شود، پیام‌های جدید نیاز به توجه شما دارند."
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__message_has_error
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "اگر انتخاب شود، برخی پیام‌ها دارای خطای ارسال هستند."
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__infant_count
@@ -185,29 +275,39 @@ msgid "Infants (0-2 years)"
 msgstr "نوزاد (زیر 2 سال)"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__state__invioced
+msgid "Invoiced"
+msgstr "فاکتور شده"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "دنبال‌کننده است"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "آخرین به‌روزرسانی توسط"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "آخرین به‌روزرسانی در"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
+msgid "Mark Done"
+msgstr "انجام شده"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "خطای ارسال پیام"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "پیام‌ها"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__mobile
@@ -217,72 +317,82 @@ msgstr "شماره موبایل"
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "مهلت فعالیت من"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "رویداد تقویم فعالیت بعدی"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "مهلت فعالیت بعدی"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "خلاصه فعالیت بعدی"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "نوع فعالیت بعدی"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "Notes, preferences, special requests..."
+msgstr "یادداشت‌ها، ترجیحات، درخواست‌های ویژه..."
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "تعداد اقدامات"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__adult_count
 msgid "Number of adults (12 years and older)"
-msgstr ""
+msgstr "تعداد بزرگسالان (12 سال و بالاتر)"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__child_count
 msgid "Number of children (between 2 and 11 years)"
-msgstr ""
+msgstr "تعداد کودکان (بین 2 تا 11 سال)"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "تعداد خطاها"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__infant_count
 msgid "Number of infants (under 2 years)"
-msgstr ""
+msgstr "تعداد نوزادان (زیر 2 سال)"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "تعداد پیام‌های نیازمند اقدام"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "تعداد پیام‌ها با خطای ارسال"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__partner_id
 msgid "Partner"
-msgstr ""
+msgstr "مخاطب"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__name
 msgid "Partner Name"
-msgstr ""
+msgstr "نام مخاطب"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "Passengers"
+msgstr "مسافران"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__rating_ids
@@ -290,14 +400,29 @@ msgid "Ratings"
 msgstr ""
 
 #. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
+msgid "Reset to Draft"
+msgstr "بازنشانی به پیش‌نویس"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "کاربر مسئول"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "خطای ارسال پیامک"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
+msgid "Send Invoice"
+msgstr "ارسال فاکتور"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "Simple Booking"
+msgstr "رزرو ساده"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__start_date
@@ -317,6 +442,15 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"وضعیت بر اساس فعالیت‌ها\n"
+"سررسید گذشته: تاریخ سررسید گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"برنامه‌ریزی‌شده: فعالیت‌های آینده."
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "Submit"
+msgstr "ارسال"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__total_guests
@@ -326,25 +460,31 @@ msgstr "تعداد مهمانان"
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__total_guests
 msgid "Total number of guests"
-msgstr ""
+msgstr "تعداد کل مهمانان"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "نوع فعالیت استثنایی در رکورد."
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "پیام‌های وب‌سایت"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "تاریخچه ارتباطات وب‌سایت"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "Your booking request has been submitted."
+msgstr "درخواست رزرو شما ارسال شد."
 
 #. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__res_partner__partner_type__pasargad_club
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
 msgid "باشگاه مشتریان بانک پاسارگاد"
 msgstr ""
 
@@ -357,58 +497,12 @@ msgstr ""
 
 #. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__res_partner__partner_type__fanap
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
 msgid "گروه فناپ"
 msgstr ""
 
 #. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__res_partner__partner_type__pasargad_financial
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
 msgid "گروه مالی بانک پاسارگاد"
 msgstr ""
-
-#. module: darman_booking_simple
-#. odoo-javascript
-#: code:addons/darman_booking_simple/static/src/js/website_simple_booking_editor.js:0
-msgid "Full Name"
-msgstr "نام"
-
-#. module: darman_booking_simple
-#. odoo-javascript
-#: code:addons/darman_booking_simple/static/src/js/website_simple_booking_editor.js:0
-msgid "Mobile Number"
-msgstr "شماره موبایل"
-
-#. module: darman_booking_simple
-#. odoo-javascript
-#: code:addons/darman_booking_simple/static/src/js/website_simple_booking_editor.js:0
-msgid "Start Date"
-msgstr "تاریخ رفت"
-
-#. module: darman_booking_simple
-#. odoo-javascript
-#: code:addons/darman_booking_simple/static/src/js/website_simple_booking_editor.js:0
-msgid "End Date"
-msgstr "تاریخ برگشت"
-
-#. module: darman_booking_simple
-#. odoo-javascript
-#: code:addons/darman_booking_simple/static/src/js/website_simple_booking_editor.js:0
-msgid "Adults (12+ years)"
-msgstr "بزرگسال (۱۲+ سال)"
-
-#. module: darman_booking_simple
-#. odoo-javascript
-#: code:addons/darman_booking_simple/static/src/js/website_simple_booking_editor.js:0
-msgid "Children (2-11 years)"
-msgstr "کودک (۲-۱۱ سال)"
-
-#. module: darman_booking_simple
-#. odoo-javascript
-#: code:addons/darman_booking_simple/static/src/js/website_simple_booking_editor.js:0
-msgid "Infants (0-2 years)"
-msgstr "نوزاد (۰-۲ سال)"
-
-#. module: darman_booking_simple
-#. odoo-javascript
-#: code:addons/darman_booking_simple/static/src/js/website_simple_booking_editor.js:0
-msgid "Description"
-msgstr "توضیحات"

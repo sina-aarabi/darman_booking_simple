@@ -15,12 +15,14 @@ class DarmanBooking(models.Model):
         [
             ('draft', 'Draft'),
             ('confirmed', 'Confirmed'),
+            ('invioced', 'Invoiced'),
             ('done', 'Done'),
             ('cancelled', 'Cancelled')
         ],
         string='Status',
         default='draft',
         required=True,
+        readonly=True,
         tracking=True  # Enable tracking for the state field
     )
     description = fields.Text(string='Description')  # New description field
@@ -81,8 +83,38 @@ class DarmanBooking(models.Model):
             if record.total_guests > 10:
                 raise ValidationError(_('Maximum 10 guests allowed per booking'))
 
+    def action_accept(self):
+        for rec in self:
+            if rec.state != 'draft':
+                raise UserError(_('Only draft bookings can be accepted'))
+            rec.state = 'confirmed'
+            rec.message_post(body=_('Booking accepted.'))
+
+    def action_decline(self):
+        for rec in self:
+            if rec.state not in ('draft', 'confirmed'):
+                raise UserError(_('Only draft or confirmed bookings can be declined'))
+            rec.state = 'cancelled'
+            rec.message_post(body=_('Booking declined.'))
+
+    def action_mark_done(self):
+        for rec in self:
+            if rec.state != 'invioced':
+                raise UserError(_('Only invoiced bookings can be marked as done'))
+            rec.state = 'done'
+            rec.message_post(body=_('Booking marked as done.'))
+
+    def action_set_to_draft(self):
+        for rec in self:
+            if rec.state != 'cancelled':
+                raise UserError(_('Only cancelled bookings can be reset to draft'))
+            rec.state = 'draft'
+            rec.message_post(body=_('Booking reset to draft.'))
+
     def action_send_invoice(self):
         self.ensure_one()
+        if self.state != 'confirmed':
+            raise UserError(_('Only confirmed bookings can be invoiced'))
         user = self.partner_id.user_ids and self.partner_id.user_ids[0] or None
         # Read mobile number from user (prefer user.partner mobile), fallback to booking mobile
         mobile = getattr(user, 'mobile', False) or getattr(user.partner_id, 'mobile', False) or self.mobile
@@ -122,17 +154,18 @@ class DarmanBooking(models.Model):
 
         # Log to chatter and notify user
         ref = response.get('referenceNumber', '') if isinstance(response, dict) else ''
-        message = _('Invoice issuance requested% s') % (f' (Ref: {ref})' if ref else '')
+        message = _('Invoice issuance requested%s') % (f' (Ref: {ref})' if ref else '')
         self.message_post(body=message)
+        self.state = 'invioced'
 
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': _('Success'),
-                'message': message,
-                'type': 'success',
-                'sticky': False,
-            }
-        }
+        # return {
+        #     'type': 'ir.actions.client',
+        #     'tag': 'display_notification',
+        #     'params': {
+        #         'title': _('Success'),
+        #         'message': message,
+        #         'type': 'success',
+        #         'sticky': False,
+        #     }
+        # }
 

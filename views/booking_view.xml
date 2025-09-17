@@ -22,8 +22,12 @@
         <field name="arch" type="xml">
             <form string="Booking Form">
                 <header>
-                    <button name="action_send_invoice" type="object" string="Send Invoice" class="btn-primary"/>
-                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                    <button name="action_accept" type="object" string="Confirm" class="btn-primary oe_highlight" invisible="state not in('draft')"/>
+                    <button name="action_decline" type="object" string="Decline" invisible="state not in('draft','confirmed')"/>
+                    <button name="action_send_invoice" type="object" string="Send Invoice" class="btn-primary" invisible="state != 'confirmed'"/>
+                    <button name="action_mark_done" type="object" string="Mark Done" invisible="state != 'invioced'"/>
+                    <button name="action_set_to_draft" type="object" string="Reset to Draft" invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
                     <group>
@@ -59,6 +63,13 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="menu_darman_booking_root" name="Booking Management" sequence="10"/>
-    <menuitem id="menu_darman_booking" name="Bookings" parent="menu_darman_booking_root" action="action_darman_booking" sequence="10"/>
+    <menuitem id="menu_darman_booking_root" 
+        name="Booking Management" 
+        web_icon="darman_booking_simple,static/description/icon.png"
+        sequence="10"/>
+    <menuitem id="menu_darman_booking" 
+        name="Bookings" 
+        parent="menu_darman_booking_root" 
+        action="action_darman_booking" 
+        sequence="10"/>
 </odoo>
