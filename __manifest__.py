@@ -27,7 +27,8 @@ Long description of module's purpose
         'views/templates.xml',
         'views/booking_view.xml',
         'views/res_partner_views.xml',
-        'data/website_booking_data.xml'
+        'data/website_booking_data.xml',
+        'wizards/pre_invoice_wizard_view.xml'
     ],
     'assets': {
         'website.assets_wysiwyg': [

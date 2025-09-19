@@ -1,5 +1,6 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError
+import json
 
 class DarmanBooking(models.Model):
     _name = 'darman.booking'
@@ -11,6 +12,7 @@ class DarmanBooking(models.Model):
     end_date = fields.Date(string='End Date', required=True)
     name = fields.Char(string='Partner Name', compute='_compute_partner_details', store=True, readonly=True)
     mobile = fields.Char(string='Mobile Number', compute='_compute_partner_details', store=True, readonly=True)
+    bill_number = fields.Char(string='Bill Number', readonly=True, copy=False)
     state = fields.Selection(
         [
             ('draft', 'Draft'),
@@ -98,11 +100,50 @@ class DarmanBooking(models.Model):
             rec.message_post(body=_('Booking declined.'))
 
     def action_mark_done(self):
+        """Check invoice payment status before marking as done"""
         for rec in self:
             if rec.state != 'invioced':
                 raise UserError(_('Only invoiced bookings can be marked as done'))
-            rec.state = 'done'
-            rec.message_post(body=_('Booking marked as done.'))
+                
+            # Get invoice detail service
+            service = self.env.ref('daarman_api.invoice_detail', raise_if_not_found=False)
+            if not service:
+                raise UserError(_('Service "invoice_detail" not found. Please check daarman_api module.'))
+    
+            # Get sample request and update billNumber
+            params = json.loads(service.sample_request)
+            params["providerParameters"]["billNumber"] = rec.bill_number  # You need to store bill_number when creating invoice
+            
+            try:
+                # Call service
+                response = service.call(params)
+                
+                # Parse the response
+                if response.get('hasError', True):
+                    raise UserError(_('Error getting invoice details: %s') % response.get('message', 'Unknown error'))
+                    
+                # Parse the result string to JSON
+                result = json.loads(response.get('result', '{}'))
+                invoice_data = result.get('result', [{}])[0].get('invoice', {})
+                
+                # Check payment status
+                if invoice_data.get('payed', False):
+                    rec.state = 'done'
+                    rec.message_post(body=_('Booking marked as done. Invoice payment verified.'))
+                else:
+                    return {
+                        'type': 'ir.actions.client',
+                        'tag': 'display_notification',
+                        'params': {
+                            'title': _('Warning'),
+                            'message': _('Cannot mark as done: Invoice is not paid yet. Please wait for payment confirmation.'),
+                            'type': 'warning',
+                            'sticky': False,
+                        }
+                    }
+                    
+            except Exception as e:
+                raise UserError(_('Error checking invoice status: %s') % str(e))
 
     def action_set_to_draft(self):
         for rec in self:
@@ -110,8 +151,42 @@ class DarmanBooking(models.Model):
                 raise UserError(_('Only cancelled bookings can be reset to draft'))
             rec.state = 'draft'
             rec.message_post(body=_('Booking reset to draft.'))
-
+            
     def action_send_invoice(self):
+        """Action to send invoice with pre-invoice check"""
+        user = self.partner_id.user_ids and self.partner_id.user_ids[0] or None
+        # Read mobile number from user (prefer user.partner mobile), fallback to booking mobile
+        mobile = getattr(user, 'mobile', False) or getattr(user.partner_id, 'mobile', False) or self.mobile
+        pod_user_id = getattr(user, 'pod_user_id', False)
+        
+        # First call pre-invoice service
+        pre_invoice_service = self.env.ref('daarman_api.pre_invoice_issuance')
+        if not pre_invoice_service:
+            raise UserError(_("Pre-invoice service not found"))
+
+        # Prepare your service parameters
+        params = pre_invoice_service.sample_request
+        json_params = json.loads(params)
+        json_params['providerParameters']['body']['Mobile'] = mobile
+        json_params['providerParameters']['body']['userId'] = str(pod_user_id)
+        
+        # Call pre-invoice service
+        response = pre_invoice_service.call(json_params)
+        
+        # Open wizard with pre-invoice data
+        return {
+            'name': _('Pre Invoice Details'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'daarman.pre.invoice.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'pre_invoice_response': response,
+                'booking_id': self.id  
+            }
+        }
+
+    def action_send_invoice_final(self):
         self.ensure_one()
         if self.state != 'confirmed':
             raise UserError(_('Only confirmed bookings can be invoiced'))
@@ -151,7 +226,13 @@ class DarmanBooking(models.Model):
 
         # Send via helper method on daarman.service
         response = service.call(data=request_data)
-
+        
+        # Store bill number from response
+        if isinstance(response, dict):
+            result = json.loads(response.get('result', '{}'))
+            invoice_data = result.get('result', {})
+            self.bill_number = invoice_data.get('billNumber')
+        
         # Log to chatter and notify user
         ref = response.get('referenceNumber', '') if isinstance(response, dict) else ''
         message = _('Invoice issuance requested%s') % (f' (Ref: {ref})' if ref else '')

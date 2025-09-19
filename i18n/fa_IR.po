@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20250101\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-17 18:50+0000\n"
-"PO-Revision-Date: 2025-09-17 18:50+0000\n"
+"POT-Creation-Date: 2025-09-19 12:04+0000\n"
+"PO-Revision-Date: 2025-09-19 12:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -111,9 +111,20 @@ msgid "Adults (12+ years)"
 msgstr "بزرگسال (12 سال و بالاتر)"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__amount
+msgid "Amount"
+msgstr "مبلغ"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_attachment_count
 msgid "Attachment Count"
 msgstr "تعداد پیوست‌ها"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__bill_number
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__bill_number
+msgid "Bill Number"
+msgstr "شماره فاکتور"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.portal_my_home_booking
@@ -143,6 +154,16 @@ msgid "Bookings"
 msgstr "رزروها"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__business_name
+msgid "Business Name"
+msgstr "نام کسب و کار"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_pre_invoice_wizard_form
+msgid "Cancel"
+msgstr "رد"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__state__cancelled
 msgid "Cancelled"
 msgstr "لغو شده"
@@ -158,6 +179,11 @@ msgid "Confirm"
 msgstr "تایید"
 
 #. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_pre_invoice_wizard_form
+msgid "Confirm and Send Invoice"
+msgstr "تایید و ارسال فاکتور"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__state__confirmed
 msgid "Confirmed"
 msgstr "تایید شده"
@@ -170,14 +196,18 @@ msgstr "مخاطب"
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.portal_my_home_booking
 msgid "Create a simple booking request"
-msgstr "ایجاد درخواست رزرو ساده"
+msgstr "ایجاد درخواست رزرو"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__create_uid
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__create_uid
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__create_uid
 msgid "Created by"
 msgstr "ایجاد شده توسط"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__create_date
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__create_date
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__create_date
 msgid "Created on"
 msgstr "ایجاد شده در"
@@ -188,12 +218,21 @@ msgid "Decline"
 msgstr "رد"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__description
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__description
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
 msgid "Description"
 msgstr "توضیحات"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__discount
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__discont
+msgid "Discount"
+msgstr "تخفیف"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__display_name
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__display_name
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__display_name
 msgid "Display Name"
 msgstr "نام نمایشی"
@@ -244,6 +283,8 @@ msgid "Has Message"
 msgstr "دارای پیام"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__id
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__id
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__id
 msgid "ID"
 msgstr "شناسه"
@@ -257,6 +298,8 @@ msgstr "آیکون"
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr "آیکون برای نشان دادن فعالیت استثنایی."
+
+
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__message_needaction
@@ -275,6 +318,12 @@ msgid "Infants (0-2 years)"
 msgstr "نوزاد (زیر 2 سال)"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__invoice_line_ids
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_pre_invoice_wizard_form
+msgid "Invoice Lines"
+msgstr "سطر فاکتور"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__state__invioced
 msgid "Invoiced"
 msgstr "فاکتور شده"
@@ -285,11 +334,15 @@ msgid "Is Follower"
 msgstr "دنبال‌کننده است"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__write_uid
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__write_uid
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__write_uid
 msgid "Last Updated by"
 msgstr "آخرین به‌روزرسانی توسط"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__write_date
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__write_date
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__write_date
 msgid "Last Updated on"
 msgstr "آخرین به‌روزرسانی در"
@@ -395,9 +448,64 @@ msgid "Passengers"
 msgstr "مسافران"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__payable_amount
+msgid "Payable Amount"
+msgstr "مبلغ قابل پرداخت"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__payment_bill_number
+msgid "Payment Bill Number"
+msgstr "شماره فاکتور"
+
+#. module: darman_booking_simple
+#: model:ir.actions.act_window,name:darman_booking_simple.action_pre_invoice_wizard
+msgid "Pre Invoice"
+msgstr "پیش فاکتور"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_pre_invoice_wizard_form
+msgid "Pre Invoice Details"
+msgstr "جزئیات پیش فاکتور"
+
+#. module: darman_booking_simple
+#: model:ir.model,name:darman_booking_simple.model_daarman_pre_invoice_line_wizard
+msgid "Pre Invoice Line Wizard"
+msgstr ""
+
+#. module: darman_booking_simple
+#: model:ir.model,name:darman_booking_simple.model_daarman_pre_invoice_wizard
+msgid "Pre Invoice Wizard"
+msgstr "پیش فاکتور"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__price
+msgid "Price"
+msgstr "قیمت"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__product_id
+msgid "Product ID"
+msgstr "شناسه محصول"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__name
+msgid "Product Name"
+msgstr "نام محصول"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__quantity
+msgid "Quantity"
+msgstr "تعداد"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__rating_ids
 msgid "Ratings"
 msgstr ""
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__reference_number
+msgid "Reference Number"
+msgstr "شماره مرجع"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
@@ -422,7 +530,7 @@ msgstr "ارسال فاکتور"
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
 msgid "Simple Booking"
-msgstr "رزرو ساده"
+msgstr "رزرو"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__start_date
@@ -453,6 +561,11 @@ msgid "Submit"
 msgstr "ارسال"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__total_amount
+msgid "Total Amount"
+msgstr "مبلغ کل"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__total_guests
 msgid "Total Guests"
 msgstr "تعداد مهمانان"
@@ -468,6 +581,11 @@ msgid "Type of the exception activity on record."
 msgstr "نوع فعالیت استثنایی در رکورد."
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__vat
+msgid "VAT"
+msgstr "مالیات"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__website_message_ids
 msgid "Website Messages"
 msgstr "پیام‌های وب‌سایت"
@@ -476,6 +594,11 @@ msgstr "پیام‌های وب‌سایت"
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__website_message_ids
 msgid "Website communication history"
 msgstr "تاریخچه ارتباطات وب‌سایت"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__wizard_id
+msgid "Wizard"
+msgstr ""
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
@@ -506,3 +629,137 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
 msgid "گروه مالی بانک پاسارگاد"
 msgstr ""
+
+
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "At least one adult is required"
+msgstr "حداقل یک بزرگسال الزامی است"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Number of guests cannot be negative"
+msgstr "تعداد مهمانان نمی‌تواند منفی باشد"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Maximum 10 guests allowed per booking"
+msgstr "حداکثر 10 مهمان برای هر رزرو مجاز است"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Only draft bookings can be accepted"
+msgstr "فقط رزروهای پیش‌نویس می‌توانند تایید شوند"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Booking accepted."
+msgstr "رزرو تایید شد."
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Only draft or confirmed bookings can be declined"
+msgstr "فقط رزروهای پیش‌نویس یا تایید شده می‌توانند رد شوند"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Booking declined."
+msgstr "رزرو رد شد."
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Only invoiced bookings can be marked as done"
+msgstr "فقط رزروهای فاکتور شده می‌توانند تکمیل شوند"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Service \"invoice_detail\" not found. Please check daarman_api module."
+msgstr "سرویس \"جزئیات فاکتور\" یافت نشد. لطفا ماژول daarman_api را بررسی کنید."
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Error getting invoice details: %s"
+msgstr "خطا در دریافت جزئیات فاکتور: %s"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Booking marked as done. Invoice payment verified."
+msgstr "رزرو تکمیل شد. پرداخت فاکتور تایید شد."
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Warning"
+msgstr "هشدار"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Cannot mark as done: Invoice is not paid yet. Please wait for payment confirmation."
+msgstr "امکان تایید نهایی وجود ندارد: فاکتور هنوز پرداخت نشده است. لطفا منتظر تایید پرداخت بمانید."
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Only cancelled bookings can be reset to draft"
+msgstr "فقط رزروهای لغو شده می‌توانند به حالت پیش‌نویس برگردند"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Booking reset to draft."
+msgstr "رزرو به حالت پیش‌نویس برگشت."
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Pre-invoice service not found"
+msgstr "سرویس پیش‌فاکتور یافت نشد"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Pre Invoice Details"
+msgstr "جزئیات پیش‌فاکتور"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Only confirmed bookings can be invoiced"
+msgstr "فقط رزروهای تایید شده می‌توانند فاکتور شوند"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "User mobile number is required to send invoice"
+msgstr "شماره موبایل کاربر برای ارسال فاکتور الزامی است"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "User POD User ID (pod_user_id) is not set"
+msgstr "شناسه کاربری POD (pod_user_id) تنظیم نشده است"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Service \"invoice_issuance\" not found. Update the daarman_api module."
+msgstr "سرویس \"صدور فاکتور\" یافت نشد. لطفا ماژول daarman_api را به‌روز کنید."
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Invoice issuance requested%s"
+msgstr "درخواست صدور فاکتور ارسال شد%s"
