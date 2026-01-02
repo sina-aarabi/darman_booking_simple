@@ -44,17 +44,114 @@ class DarmanBooking(models.Model):
     )
     
     child_count = fields.Integer(
-        string='Children (2-11 years)',
+        string='Children (0-12 years)',
         default=0,
         tracking=True,
-        help='Number of children (between 2 and 11 years)'
+        help='Total number of children (aged 0 to 12 years)'
     )
     
-    infant_count = fields.Integer(
-        string='Infants (0-2 years)',
-        default=0,
+    
+    
+    # Children age range fields (up to 5 children)
+    child_age_1 = fields.Selection(
+        [
+            ('1', 'Under 1 year'),
+            ('2', '1 to 2 years'),
+            ('3', '2 to 3 years'),
+            ('4', '3 to 4 years'),
+            ('5', '4 to 5 years'),
+            ('6', '5 to 6 years'),
+            ('7', '6 to 7 years'),
+            ('8', '7 to 8 years'),
+            ('9', '8 to 9 years'),
+            ('10', '9 to 10 years'),
+            ('11', '10 to 11 years'),
+            ('12', '11 to 12 years'),
+            
+        ],
+        string='Child 1 Age Range',
         tracking=True,
-        help='Number of infants (under 2 years)'
+        help='Age range for first child'
+    )
+    
+    child_age_2 = fields.Selection(
+        [
+            ('1', 'Under 1 year'),
+            ('2', '1 to 2 years'),
+            ('3', '2 to 3 years'),
+            ('4', '3 to 4 years'),
+            ('5', '4 to 5 years'),
+            ('6', '5 to 6 years'),
+            ('7', '6 to 7 years'),
+            ('8', '7 to 8 years'),
+            ('9', '8 to 9 years'),
+            ('10', '9 to 10 years'),
+            ('11', '10 to 11 years'),
+            ('12', '11 to 12 years'),
+        ],
+        string='Child 2 Age Range',
+        tracking=True,
+        help='Age range for second child'
+    )
+    
+    child_age_3 = fields.Selection(
+        [
+            ('1', 'Under 1 year'),
+            ('2', '1 to 2 years'),
+            ('3', '2 to 3 years'),
+            ('4', '3 to 4 years'),
+            ('5', '4 to 5 years'),
+            ('6', '5 to 6 years'),
+            ('7', '6 to 7 years'),
+            ('8', '7 to 8 years'),
+            ('9', '8 to 9 years'),
+            ('10', '9 to 10 years'),
+            ('11', '10 to 11 years'),
+            ('12', '11 to 12 years'),
+        ],
+        string='Child 3 Age Range',
+        tracking=True,
+        help='Age range for third child'
+    )
+    
+    child_age_4 = fields.Selection(
+        [
+            ('1', 'Under 1 year'),
+            ('2', '1 to 2 years'),
+            ('3', '2 to 3 years'),
+            ('4', '3 to 4 years'),
+            ('5', '4 to 5 years'),
+            ('6', '5 to 6 years'),
+            ('7', '6 to 7 years'),
+            ('8', '7 to 8 years'),
+            ('9', '8 to 9 years'),
+            ('10', '9 to 10 years'),
+            ('11', '10 to 11 years'),
+            ('12', '11 to 12 years'),
+        ],
+        string='Child 4 Age Range',
+        tracking=True,
+        help='Age range for fourth child'
+    )
+    
+    child_age_5 = fields.Selection(
+        [
+            ('1', 'Under 1 year'),
+            ('2', '1 to 2 years'),
+            ('3', '2 to 3 years'),
+            ('4', '3 to 4 years'),
+            ('5', '4 to 5 years'),
+            ('6', '5 to 6 years'),
+            ('7', '6 to 7 years'),
+            ('8', '7 to 8 years'),
+            ('9', '8 to 9 years'),
+            ('10', '9 to 10 years'),
+            ('11', '10 to 11 years'),
+            ('12', '11 to 12 years'),
+        ],
+        string='Child 5 Age Range',
+        tracking=True,
+        help='Age range for fifth child'
     )
     
     total_guests = fields.Integer(
@@ -64,23 +161,82 @@ class DarmanBooking(models.Model):
         help='Total number of guests'
     )
 
+    # Hotel Booking Fields
+    hotel_id = fields.Char(
+        string='Hotel External ID',
+        help='Lamasoo external hotel ID'
+    )
+    hotel_name = fields.Char(
+        string='Hotel Name',
+        help='Selected hotel name'
+    )
+    room_type_external_id = fields.Char(
+        string='Room Type ID',
+        help='Lamasoo external room type ID'
+    )
+    room_type_title = fields.Char(
+        string='Room Type',
+        help='Selected room type'
+    )
+    rate_plan_id = fields.Char(
+        string='Rate Plan ID',
+        help='Lamasoo rate plan ID'
+    )
+    rate_plan_title = fields.Char(
+        string='Rate Plan',
+        help='Selected rate plan (meal type)'
+    )
+    price_to_pay = fields.Float(
+        string='Price per Night',
+        help='Hotel booking price per night'
+    )
+    total_price = fields.Float(
+        string='Total Hotel Price',
+        compute='_compute_total_price',
+        store=True,
+        help='Total hotel price for entire stay'
+    )
+    currency = fields.Char(
+        string='Currency',
+        default='IRR',
+        help='Currency of hotel prices'
+    )
+    hotel_city_id = fields.Many2one(
+        'lamasoo.city',
+        string='Hotel City',
+        help='City where hotel is located'
+    )
+    supplier_name = fields.Char(
+        string='Hotel Supplier',
+        help='Hotel booking supplier name'
+    )
+
+    @api.depends('price_to_pay', 'start_date', 'end_date')
+    def _compute_total_price(self):
+        for record in self:
+            if record.price_to_pay and record.start_date and record.end_date:
+                nights = (record.end_date - record.start_date).days
+                record.total_price = record.price_to_pay * nights if nights > 0 else 0
+            else:
+                record.total_price = 0
+
     @api.depends('partner_id')
     def _compute_partner_details(self):
         for record in self:
             record.name = record.partner_id.name if record.partner_id else ''
             record.mobile = record.partner_id.mobile if record.partner_id else ''
 
-    @api.depends('adult_count', 'child_count', 'infant_count')
+    @api.depends('adult_count', 'child_count')
     def _compute_total_guests(self):
         for record in self:
-            record.total_guests = record.adult_count + record.child_count + record.infant_count
+            record.total_guests = record.adult_count + record.child_count
 
-    @api.constrains('adult_count', 'child_count', 'infant_count')
+    @api.constrains('adult_count', 'child_count')
     def _check_guest_counts(self):
         for record in self:
             if record.adult_count < 1:
                 raise ValidationError(_('At least one adult is required'))
-            if any(count < 0 for count in [record.adult_count, record.child_count, record.infant_count]):
+            if any(count < 0 for count in [record.adult_count, record.child_count]):
                 raise ValidationError(_('Number of guests cannot be negative'))
             if record.total_guests > 10:
                 raise ValidationError(_('Maximum 10 guests allowed per booking'))
@@ -249,4 +405,41 @@ class DarmanBooking(models.Model):
         #         'sticky': False,
         #     }
         # }
+
+    def action_open_hotel_search(self):
+        """Open the hotel availability wizard for booking"""
+        self.ensure_one()
+        
+        # Get default city from partner if available
+        default_city = False
+        if self.partner_id and hasattr(self.partner_id, 'city_id') and self.partner_id.city_id:
+            # Try to find lamasoo city matching partner's city
+            city = self.env['lamasoo.city'].search([
+                ('name', 'ilike', self.partner_id.city_id)
+            ], limit=1)
+            if city:
+                default_city = city.id
+        
+        # Open the hotel availability wizard with context
+        return {
+            'name': _('Hotel Availability Search'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'lamasoo.hotel.availability.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_start_date': self.start_date,
+                'default_end_date': self.end_date,
+                'default_city_id': default_city,
+                'booking_id': self.id,  # Pass booking context
+                'partner_id': self.partner_id.id,
+                'adult_count': self.adult_count,
+                'child_count': self.child_count,
+                'child_age_1': self.child_age_1,
+                'child_age_2': self.child_age_2,
+                'child_age_3': self.child_age_3,
+                'child_age_4': self.child_age_4,
+                'child_age_5': self.child_age_5,
+            }
+        }
 

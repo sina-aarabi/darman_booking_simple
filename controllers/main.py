@@ -10,6 +10,11 @@ class CustomWebsiteForm(WebsiteForm):
             partner_name = values.pop('name', None)
             partner_phone = values.pop('mobile', None)
             partner_type = values.pop('partner_type', None)
+            child_age_1 = values.pop('child_age_1', None)
+            child_age_2 = values.pop('child_age_2', None)
+            child_age_3 = values.pop('child_age_3', None)
+            child_age_4 = values.pop('child_age_4', None)
+            child_age_5 = values.pop('child_age_5', None)
 
             if partner_name or partner_phone:
                 # Find existing partner by mobile
@@ -34,4 +39,14 @@ class CustomWebsiteForm(WebsiteForm):
         data = super().extract_data(model, values)
         if partner:
             data['record']['partner_id'] = partner.id
+        if child_age_1:
+            data['record']['child_age_1'] = child_age_1
+        if child_age_2: 
+            data['record']['child_age_2'] = child_age_2
+        if child_age_3: 
+            data['record']['child_age_3'] = child_age_3     
+        if child_age_4: 
+            data['record']['child_age_4'] = child_age_4     
+        if child_age_5: 
+            data['record']['child_age_5'] = child_age_5 
         return data

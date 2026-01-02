@@ -18,7 +18,7 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','website','portal'],
+    'depends': ['base','web','mail','website','portal','lamasoo'],
 
     # always loaded
     'data': [
@@ -33,6 +33,9 @@ Long description of module's purpose
     'assets': {
         'website.assets_wysiwyg': [
             'darman_booking_simple/static/src/js/website_simple_booking_editor.js',
+        ],
+        'web.assets_frontend': [
+            'darman_booking_simple/static/src/js/simple_booking_child_age.js',
         ],
     },
     # only loaded in demonstration mode

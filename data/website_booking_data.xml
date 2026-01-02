@@ -18,7 +18,7 @@
                 'partner_type',
                 'adult_count',
                 'child_count',
-                'infant_count'
+                
             ]"/>
         </function>
 

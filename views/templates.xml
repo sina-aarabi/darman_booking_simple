@@ -162,23 +162,140 @@
                                                                 <div class="col-md-4 s_website_form_field" data-type="integer">
                                                                     <div class="row s_col_no_resize s_col_no_bgcolor">
                                                                         <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="child_count">
-                                                                            <span class="s_website_form_label_content">Children (2-11)</span>
+                                                                            <span class="s_website_form_label_content">Children (0-12)</span>
                                                                         </label>
                                                                         <div class="col-sm">
-                                                                            <input id="child_count" type="number" min="0" class="form-control s_website_form_input" name="child_count" value="0"/>
+                                                                            <input id="child_count" type="number" min="0" max="5" class="form-control s_website_form_input" name="child_count" value="0"/>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-4 s_website_form_field" data-type="integer">
-                                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
-                                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="infant_count">
-                                                                            <span class="s_website_form_label_content">Infants (0-2)</span>
-                                                                        </label>
-                                                                        <div class="col-sm">
-                                                                            <input id="infant_count" type="number" min="0" class="form-control s_website_form_input" name="infant_count" value="0"/>
+
+                                                                <!-- Child age ranges (shown based on child_count) -->
+                                                                <div class="w-100" id="child_age_container">
+                                                                    <div class="row g-2">
+                                                                        <div class="col-md-4 s_website_form_field" id="child_age_1_row" style="display:none;">
+                                                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="child_age_1">
+                                                                                    <span class="s_website_form_label_content">Child 1 Age Range</span>
+                                                                                </label>
+                                                                                <div class="col-sm">
+                                                                                    <select id="child_age_1" name="child_age_1" class="form-select s_website_form_input">
+                                                                                        <option value="">--</option>
+                                                                                        <option value="1">Under 1 year</option>
+                                                                                        <option value="2">1 to 2 years</option>
+                                                                                        <option value="3">2 to 3 years</option>
+                                                                                        <option value="4">3 to 4 years</option>
+                                                                                        <option value="5">4 to 5 years</option>
+                                                                                        <option value="6">5 to 6 years</option>
+                                                                                        <option value="7">6 to 7 years</option>
+                                                                                        <option value="8">7 to 8 years</option>
+                                                                                        <option value="9">8 to 9 years</option>
+                                                                                        <option value="10">9 to 10 years</option>
+                                                                                        <option value="11">10 to 11 years</option>
+                                                                                        <option value="12">11 to 12 years</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 s_website_form_field" id="child_age_2_row" style="display:none;">
+                                                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="child_age_2">
+                                                                                    <span class="s_website_form_label_content">Child 2 Age Range</span>
+                                                                                </label>
+                                                                                <div class="col-sm">
+                                                                                    <select id="child_age_2" name="child_age_2" class="form-select s_website_form_input">
+                                                                                        <option value="">--</option>
+                                                                                        <option value="1">Under 1 year</option>
+                                                                                        <option value="2">1 to 2 years</option>
+                                                                                        <option value="3">2 to 3 years</option>
+                                                                                        <option value="4">3 to 4 years</option>
+                                                                                        <option value="5">4 to 5 years</option>
+                                                                                        <option value="6">5 to 6 years</option>
+                                                                                        <option value="7">6 to 7 years</option>
+                                                                                        <option value="8">7 to 8 years</option>
+                                                                                        <option value="9">8 to 9 years</option>
+                                                                                        <option value="10">9 to 10 years</option>
+                                                                                        <option value="11">10 to 11 years</option>
+                                                                                        <option value="12">11 to 12 years</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 s_website_form_field" id="child_age_3_row" style="display:none;">
+                                                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="child_age_3">
+                                                                                    <span class="s_website_form_label_content">Child 3 Age Range</span>
+                                                                                </label>
+                                                                                <div class="col-sm">
+                                                                                    <select id="child_age_3" name="child_age_3" class="form-select s_website_form_input">
+                                                                                        <option value="">--</option>
+                                                                                        <option value="1">Under 1 year</option>
+                                                                                        <option value="2">1 to 2 years</option>
+                                                                                        <option value="3">2 to 3 years</option>
+                                                                                        <option value="4">3 to 4 years</option>
+                                                                                        <option value="5">4 to 5 years</option>
+                                                                                        <option value="6">5 to 6 years</option>
+                                                                                        <option value="7">6 to 7 years</option>
+                                                                                        <option value="8">7 to 8 years</option>
+                                                                                        <option value="9">8 to 9 years</option>
+                                                                                        <option value="10">9 to 10 years</option>
+                                                                                        <option value="11">10 to 11 years</option>
+                                                                                        <option value="12">11 to 12 years</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 s_website_form_field" id="child_age_4_row" style="display:none;">
+                                                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="child_age_4">
+                                                                                    <span class="s_website_form_label_content">Child 4 Age Range</span>
+                                                                                </label>
+                                                                                <div class="col-sm">
+                                                                                    <select id="child_age_4" name="child_age_4" class="form-select s_website_form_input">
+                                                                                        <option value="">--</option>
+                                                                                        <option value="1">Under 1 year</option>
+                                                                                        <option value="2">1 to 2 years</option>
+                                                                                        <option value="3">2 to 3 years</option>
+                                                                                        <option value="4">3 to 4 years</option>
+                                                                                        <option value="5">4 to 5 years</option>
+                                                                                        <option value="6">5 to 6 years</option>
+                                                                                        <option value="7">6 to 7 years</option>
+                                                                                        <option value="8">7 to 8 years</option>
+                                                                                        <option value="9">8 to 9 years</option>
+                                                                                        <option value="10">9 to 10 years</option>
+                                                                                        <option value="11">10 to 11 years</option>
+                                                                                        <option value="12">11 to 12 years</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 s_website_form_field" id="child_age_5_row" style="display:none;">
+                                                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="child_age_5">
+                                                                                    <span class="s_website_form_label_content">Child 5 Age Range</span>
+                                                                                </label>
+                                                                                <div class="col-sm">
+                                                                                    <select id="child_age_5" name="child_age_5" class="form-select s_website_form_input">
+                                                                                        <option value="">--</option>
+                                                                                        <option value="1">Under 1 year</option>
+                                                                                        <option value="2">1 to 2 years</option>
+                                                                                        <option value="3">2 to 3 years</option>
+                                                                                        <option value="4">3 to 4 years</option>
+                                                                                        <option value="5">4 to 5 years</option>
+                                                                                        <option value="6">5 to 6 years</option>
+                                                                                        <option value="7">6 to 7 years</option>
+                                                                                        <option value="8">7 to 8 years</option>
+                                                                                        <option value="9">8 to 9 years</option>
+                                                                                        <option value="10">9 to 10 years</option>
+                                                                                        <option value="11">10 to 11 years</option>
+                                                                                        <option value="12">11 to 12 years</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
