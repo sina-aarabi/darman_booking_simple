@@ -190,12 +190,12 @@ class DarmanBooking(models.Model):
         string='Price per Night',
         help='Hotel booking price per night'
     )
-    total_price = fields.Float(
-        string='Total Hotel Price',
-        compute='_compute_total_price',
-        store=True,
-        help='Total hotel price for entire stay'
-    )
+    # total_price = fields.Float(
+    #     string='Total Hotel Price',
+    #     compute='_compute_total_price',
+    #     store=True,
+    #     help='Total hotel price for entire stay'
+    # )
     currency = fields.Char(
         string='Currency',
         default='IRR',
@@ -210,15 +210,18 @@ class DarmanBooking(models.Model):
         string='Hotel Supplier',
         help='Hotel booking supplier name'
     )
+    
+    #relation for lamasoo.hotel.booking
+    lamasoo_hotel_booking_id = fields.Many2one(comodel_name='lamasoo.hotel.booking', string='Hotel Booking', help='Related Lamasoo Hotel Booking record')
 
-    @api.depends('price_to_pay', 'start_date', 'end_date')
-    def _compute_total_price(self):
-        for record in self:
-            if record.price_to_pay and record.start_date and record.end_date:
-                nights = (record.end_date - record.start_date).days
-                record.total_price = record.price_to_pay * nights if nights > 0 else 0
-            else:
-                record.total_price = 0
+    # @api.depends('price_to_pay', 'start_date', 'end_date')
+    # def _compute_total_price(self):
+    #     for record in self:
+    #         if record.price_to_pay and record.start_date and record.end_date:
+    #             nights = (record.end_date - record.start_date).days
+    #             record.total_price = record.price_to_pay * nights if nights > 0 else 0
+    #         else:
+    #             record.total_price = 0
 
     @api.depends('partner_id')
     def _compute_partner_details(self):
@@ -435,6 +438,7 @@ class DarmanBooking(models.Model):
                 'partner_id': self.partner_id.id,
                 'adult_count': self.adult_count,
                 'child_count': self.child_count,
+                'total_guests': self.total_guests,
                 'child_age_1': self.child_age_1,
                 'child_age_2': self.child_age_2,
                 'child_age_3': self.child_age_3,

@@ -6,14 +6,288 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e-20250101\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-19 12:04+0000\n"
-"PO-Revision-Date: 2025-09-19 12:04+0000\n"
+"POT-Creation-Date: 2026-01-04 16:48+0000\n"
+"PO-Revision-Date: 2026-01-04 16:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__2
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__2
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__2
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__2
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__2
+msgid "1 to 2 years"
+msgstr "1 تا 2 سال"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__11
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__11
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__11
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__11
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__11
+msgid "10 to 11 years"
+msgstr "10 تا 11 سال"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__12
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__12
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__12
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__12
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__12
+msgid "11 to 12 years"
+msgstr "11 تا 12 سال"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__3
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__3
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__3
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__3
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__3
+msgid "2 to 3 years"
+msgstr "2 تا 3 سال"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__4
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__4
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__4
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__4
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__4
+msgid "3 to 4 years"
+msgstr "3 تا 4 سال"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__5
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__5
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__5
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__5
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__5
+msgid "4 to 5 years"
+msgstr "4 تا 5 سال"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__6
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__6
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__6
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__6
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__6
+msgid "5 to 6 years"
+msgstr "5 تا 6 سال"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__7
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__7
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__7
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__7
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__7
+msgid "6 to 7 years"
+msgstr "6 تا 7 سال "
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__8
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__8
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__8
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__8
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__8
+msgid "7 to 8 years"
+msgstr "7 تا 8 سال"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__9
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__9
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__9
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__9
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__9
+msgid "8 to 9 years"
+msgstr "8 تا 9 سال"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__10
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__10
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__10
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__10
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__10
+msgid "9 to 10 years"
+msgstr "9 تا 10 سال"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<select id=\"child_age_1\" name=\"child_age_1\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">Under 1 year</option>\n"
+"                                                                                        <option value=\"2\">1 to 2 years</option>\n"
+"                                                                                        <option value=\"3\">2 to 3 years</option>\n"
+"                                                                                        <option value=\"4\">3 to 4 years</option>\n"
+"                                                                                        <option value=\"5\">4 to 5 years</option>\n"
+"                                                                                        <option value=\"6\">5 to 6 years</option>\n"
+"                                                                                        <option value=\"7\">6 to 7 years</option>\n"
+"                                                                                        <option value=\"8\">7 to 8 years</option>\n"
+"                                                                                        <option value=\"9\">8 to 9 years</option>\n"
+"                                                                                        <option value=\"10\">9 to 10 years</option>\n"
+"                                                                                        <option value=\"11\">10 to 11 years</option>\n"
+"                                                                                        <option value=\"12\">11 to 12 years</option>\n"
+"                                                                                    </select>"
+msgstr ""
+"<select id=\"child_age_1\" name=\"child_age_1\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">زیر 1 سال</option>\n"
+"                                                                                        <option value=\"2\">1 تا 2 سال</option>\n"
+"                                                                                        <option value=\"3\">2 تا 3 سال</option>\n"
+"                                                                                        <option value=\"4\">3 تا 4 سال</option>\n"
+"                                                                                        <option value=\"5\">4 تا 5 سال</option>\n"
+"                                                                                        <option value=\"6\">5 تا 6 سال</option>\n"
+"                                                                                        <option value=\"7\">6 تا 7 سال</option>\n"
+"                                                                                        <option value=\"8\">7 تا 8 سال</option>\n"
+"                                                                                        <option value=\"9\">8 تا 9 سال</option>\n"
+"                                                                                        <option value=\"10\">9 تا 10 سال</option>\n"
+"                                                                                        <option value=\"11\">10 تا 11 سال</option>\n"
+"                                                                                        <option value=\"12\">11 تا 12 سال</option>\n"
+"                                                                                    </select>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<select id=\"child_age_2\" name=\"child_age_2\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">Under 1 year</option>\n"
+"                                                                                        <option value=\"2\">1 to 2 years</option>\n"
+"                                                                                        <option value=\"3\">2 to 3 years</option>\n"
+"                                                                                        <option value=\"4\">3 to 4 years</option>\n"
+"                                                                                        <option value=\"5\">4 to 5 years</option>\n"
+"                                                                                        <option value=\"6\">5 to 6 years</option>\n"
+"                                                                                        <option value=\"7\">6 to 7 years</option>\n"
+"                                                                                        <option value=\"8\">7 to 8 years</option>\n"
+"                                                                                        <option value=\"9\">8 to 9 years</option>\n"
+"                                                                                        <option value=\"10\">9 to 10 years</option>\n"
+"                                                                                        <option value=\"11\">10 to 11 years</option>\n"
+"                                                                                        <option value=\"12\">11 to 12 years</option>\n"
+"                                                                                    </select>"
+msgstr ""
+"<select id=\"child_age_2\" name=\"child_age_2\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">زیر 1 سال</option>\n"
+"                                                                                        <option value=\"2\">1 تا 2 سال</option>\n"
+"                                                                                        <option value=\"3\">2 تا 3 سال</option>\n"
+"                                                                                        <option value=\"4\">3 تا 4 سال</option>\n"
+"                                                                                        <option value=\"5\">4 تا 5 سال</option>\n"
+"                                                                                        <option value=\"6\">5 تا 6 سال</option>\n"
+"                                                                                        <option value=\"7\">6 تا 7 سال</option>\n"
+"                                                                                        <option value=\"8\">7 تا 8 سال</option>\n"
+"                                                                                        <option value=\"9\">8 تا 9 سال</option>\n"
+"                                                                                        <option value=\"10\">9 تا 10 سال</option>\n"
+"                                                                                        <option value=\"11\">10 تا 11 سال</option>\n"
+"                                                                                        <option value=\"12\">11 تا 12 سال</option>\n"
+"                                                                                    </select>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<select id=\"child_age_3\" name=\"child_age_3\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">Under 1 year</option>\n"
+"                                                                                        <option value=\"2\">1 to 2 years</option>\n"
+"                                                                                        <option value=\"3\">2 to 3 years</option>\n"
+"                                                                                        <option value=\"4\">3 to 4 years</option>\n"
+"                                                                                        <option value=\"5\">4 to 5 years</option>\n"
+"                                                                                        <option value=\"6\">5 to 6 years</option>\n"
+"                                                                                        <option value=\"7\">6 to 7 years</option>\n"
+"                                                                                        <option value=\"8\">7 to 8 years</option>\n"
+"                                                                                        <option value=\"9\">8 to 9 years</option>\n"
+"                                                                                        <option value=\"10\">9 to 10 years</option>\n"
+"                                                                                        <option value=\"11\">10 to 11 years</option>\n"
+"                                                                                        <option value=\"12\">11 to 12 years</option>\n"
+"                                                                                    </select>"
+msgstr ""
+"<select id=\"child_age_3\" name=\"child_age_3\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">زیر 1 سال</option>\n"
+"                                                                                        <option value=\"2\">1 تا 2 سال</option>\n"
+"                                                                                        <option value=\"3\">2 تا 3 سال</option>\n"
+"                                                                                        <option value=\"4\">3 تا 4 سال</option>\n"
+"                                                                                        <option value=\"5\">4 تا 5 سال</option>\n"
+"                                                                                        <option value=\"6\">5 تا 6 سال</option>\n"
+"                                                                                        <option value=\"7\">6 تا 7 سال</option>\n"
+"                                                                                        <option value=\"8\">7 تا 8 سال</option>\n"
+"                                                                                        <option value=\"9\">8 تا 9 سال</option>\n"
+"                                                                                        <option value=\"10\">9 تا 10 سال</option>\n"
+"                                                                                        <option value=\"11\">10 تا 11 سال</option>\n"
+"                                                                                        <option value=\"12\">11 تا 12 سال</option>\n"
+"                                                                                    </select>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<select id=\"child_age_4\" name=\"child_age_4\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">Under 1 year</option>\n"
+"                                                                                        <option value=\"2\">1 to 2 years</option>\n"
+"                                                                                        <option value=\"3\">2 to 3 years</option>\n"
+"                                                                                        <option value=\"4\">3 to 4 years</option>\n"
+"                                                                                        <option value=\"5\">4 to 5 years</option>\n"
+"                                                                                        <option value=\"6\">5 to 6 years</option>\n"
+"                                                                                        <option value=\"7\">6 to 7 years</option>\n"
+"                                                                                        <option value=\"8\">7 to 8 years</option>\n"
+"                                                                                        <option value=\"9\">8 to 9 years</option>\n"
+"                                                                                        <option value=\"10\">9 to 10 years</option>\n"
+"                                                                                        <option value=\"11\">10 to 11 years</option>\n"
+"                                                                                        <option value=\"12\">11 to 12 years</option>\n"
+"                                                                                    </select>"
+msgstr ""
+"<select id=\"child_age_4\" name=\"child_age_4\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">زیر 1 سال</option>\n"
+"                                                                                        <option value=\"2\">1 تا 2 سال</option>\n"
+"                                                                                        <option value=\"3\">2 تا 3 سال</option>\n"
+"                                                                                        <option value=\"4\">3 تا 4 سال</option>\n"
+"                                                                                        <option value=\"5\">4 تا 5 سال</option>\n"
+"                                                                                        <option value=\"6\">5 تا 6 سال</option>\n"
+"                                                                                        <option value=\"7\">6 تا 7 سال</option>\n"
+"                                                                                        <option value=\"8\">7 تا 8 سال</option>\n"
+"                                                                                        <option value=\"9\">8 تا 9 سال</option>\n"
+"                                                                                        <option value=\"10\">9 تا 10 سال</option>\n"
+"                                                                                        <option value=\"11\">10 تا 11 سال</option>\n"
+"                                                                                        <option value=\"12\">11 تا 12 سال</option>\n"
+"                                                                                    </select>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid ""
+"<select id=\"child_age_5\" name=\"child_age_5\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">Under 1 year</option>\n"
+"                                                                                        <option value=\"2\">1 to 2 years</option>\n"
+"                                                                                        <option value=\"3\">2 to 3 years</option>\n"
+"                                                                                        <option value=\"4\">3 to 4 years</option>\n"
+"                                                                                        <option value=\"5\">4 to 5 years</option>\n"
+"                                                                                        <option value=\"6\">5 to 6 years</option>\n"
+"                                                                                        <option value=\"7\">6 to 7 years</option>\n"
+"                                                                                        <option value=\"8\">7 to 8 years</option>\n"
+"                                                                                        <option value=\"9\">8 to 9 years</option>\n"
+"                                                                                        <option value=\"10\">9 to 10 years</option>\n"
+"                                                                                        <option value=\"11\">10 to 11 years</option>\n"
+"                                                                                        <option value=\"12\">11 to 12 years</option>\n"
+"                                                                                    </select>"
+msgstr ""
+"<select id=\"child_age_5\" name=\"child_age_5\" class=\"form-select s_website_form_input\">\n"
+"                                                                                        <option value=\"\">--</option>\n"
+"                                                                                        <option value=\"1\">زیر 1 سال</option>\n"
+"                                                                                        <option value=\"2\">1 تا 2 سال</option>\n"
+"                                                                                        <option value=\"3\">2 تا 3 سال</option>\n"
+"                                                                                        <option value=\"4\">3 تا 4 سال</option>\n"
+"                                                                                        <option value=\"5\">4 تا 5 سال</option>\n"
+"                                                                                        <option value=\"6\">5 تا 6 سال</option>\n"
+"                                                                                        <option value=\"7\">6 تا 7 سال</option>\n"
+"                                                                                        <option value=\"8\">7 تا 8 سال</option>\n"
+"                                                                                        <option value=\"9\">8 تا 9 سال</option>\n"
+"                                                                                        <option value=\"10\">9 تا 10 سال</option>\n"
+"                                                                                        <option value=\"11\">10 تا 11 سال</option>\n"
+"                                                                                        <option value=\"12\">11 تا 12 سال</option>\n"
+"                                                                                    </select>"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
@@ -26,8 +300,32 @@ msgstr ""
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
-msgid "<span class=\"s_website_form_label_content\">Children (2-11)</span>"
-msgstr "<span class=\"s_website_form_label_content\">کودک (2-11)</span>"
+msgid "<span class=\"s_website_form_label_content\">Child 1 Age Range</span>"
+msgstr "<span class=\"s_website_form_label_content\">سن کودک 1</span>"
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Child 2 Age Range</span>"
+msgstr "<span class=\"s_website_form_label_content\">سن کودک 2</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Child 3 Age Range</span>"
+msgstr "<span class=\"s_website_form_label_content\">سن کودک 3</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Child 4 Age Range</span>"
+msgstr "<span class=\"s_website_form_label_content\">سن کودک 4</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Child 5 Age Range</span>"
+msgstr "<span class=\"s_website_form_label_content\">سن کودک 5</span>"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Children (0-12)</span>"
+msgstr "<span class=\"s_website_form_label_content\">کودکان(0 تا 12 سال)</span>"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
@@ -51,11 +349,6 @@ msgid ""
 msgstr ""
 "<span class=\"s_website_form_label_content\">نام و نام خانوادگی</span>\n"
 "                                                            <span class=\"s_website_form_mark\"> *</span>"
-
-#. module: darman_booking_simple
-#: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
-msgid "<span class=\"s_website_form_label_content\">Infants (0-2)</span>"
-msgstr "<span class=\"s_website_form_label_content\">نوزاد (0-2)</span>"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
@@ -109,6 +402,31 @@ msgstr "آیکون نوع فعالیت"
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__adult_count
 msgid "Adults (12+ years)"
 msgstr "بزرگسال (12 سال و بالاتر)"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__child_age_5
+msgid "Age range for fifth child"
+msgstr "رنج سنی کودک پنجم"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__child_age_1
+msgid "Age range for first child"
+msgstr "رنج سنی کودک اول"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__child_age_4
+msgid "Age range for fourth child"
+msgstr "رنج سنی کودک چهارم"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__child_age_2
+msgid "Age range for second child"
+msgstr "رنج سنی کودک دوم"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__child_age_3
+msgid "Age range for third child"
+msgstr "رنج سنی کودک سوم"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__amount
@@ -169,9 +487,39 @@ msgid "Cancelled"
 msgstr "لغو شده"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__child_age_1
+msgid "Child 1 Age Range"
+msgstr "سن کودک 1"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__child_age_2
+msgid "Child 2 Age Range"
+msgstr "سن کودک 2"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__child_age_3
+msgid "Child 3 Age Range"
+msgstr "سن کودک 3"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__child_age_4
+msgid "Child 4 Age Range"
+msgstr "سن کودک 4"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__child_age_5
+msgid "Child 5 Age Range"
+msgstr "سن کودک 5"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__child_count
-msgid "Children (2-11 years)"
+msgid "Children (0-12 years)"
 msgstr "کودک (بین 2 تا 11 سال)"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__hotel_city_id
+msgid "City where hotel is located"
+msgstr "شهر هتل"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
@@ -211,6 +559,16 @@ msgstr "ایجاد شده توسط"
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__create_date
 msgid "Created on"
 msgstr "ایجاد شده در"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__currency
+msgid "Currency"
+msgstr "واحد پول"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__currency
+msgid "Currency of hotel prices"
+msgstr "واحد پول هتل"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
@@ -283,6 +641,46 @@ msgid "Has Message"
 msgstr "دارای پیام"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__lamasoo_hotel_booking_id
+msgid "Hotel Booking"
+msgstr "رزرو هتل"
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
+msgid "Hotel Booking Information"
+msgstr "اطلاعات رزرو هتل"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__hotel_city_id
+msgid "Hotel City"
+msgstr "شهر"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__hotel_id
+msgid "Hotel External ID"
+msgstr "هتل"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__hotel_name
+msgid "Hotel Name"
+msgstr "نام هتل"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__supplier_name
+msgid "Hotel Supplier"
+msgstr ""
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__price_to_pay
+msgid "Hotel booking price per night"
+msgstr "مبلغ قابل پرداخت"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__supplier_name
+msgid "Hotel booking supplier name"
+msgstr ""
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__id
 #: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__id
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__id
@@ -299,8 +697,6 @@ msgstr "آیکون"
 msgid "Icon to indicate an exception activity."
 msgstr "آیکون برای نشان دادن فعالیت استثنایی."
 
-
-
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__message_needaction
 msgid "If checked, new messages require your attention."
@@ -311,11 +707,6 @@ msgstr "اگر انتخاب شود، پیام‌های جدید نیاز به ت
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "اگر انتخاب شود، برخی پیام‌ها دارای خطای ارسال هستند."
-
-#. module: darman_booking_simple
-#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__infant_count
-msgid "Infants (0-2 years)"
-msgstr "نوزاد (زیر 2 سال)"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__invoice_line_ids
@@ -332,6 +723,21 @@ msgstr "فاکتور شده"
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_is_follower
 msgid "Is Follower"
 msgstr "دنبال‌کننده است"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__hotel_id
+msgid "Lamasoo external hotel ID"
+msgstr ""
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__room_type_external_id
+msgid "Lamasoo external room type ID"
+msgstr ""
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__rate_plan_id
+msgid "Lamasoo rate plan ID"
+msgstr ""
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__write_uid
@@ -408,19 +814,9 @@ msgid "Number of adults (12 years and older)"
 msgstr "تعداد بزرگسالان (12 سال و بالاتر)"
 
 #. module: darman_booking_simple
-#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__child_count
-msgid "Number of children (between 2 and 11 years)"
-msgstr "تعداد کودکان (بین 2 تا 11 سال)"
-
-#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_has_error_counter
 msgid "Number of errors"
 msgstr "تعداد خطاها"
-
-#. module: darman_booking_simple
-#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__infant_count
-msgid "Number of infants (under 2 years)"
-msgstr "تعداد نوزادان (زیر 2 سال)"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__message_needaction_counter
@@ -483,6 +879,11 @@ msgid "Price"
 msgstr "قیمت"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__price_to_pay
+msgid "Price per Night"
+msgstr "مبلغ قابل پرداخت"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__product_id
 msgid "Product ID"
 msgstr "شناسه محصول"
@@ -498,14 +899,29 @@ msgid "Quantity"
 msgstr "تعداد"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__rate_plan_title
+msgid "Rate Plan"
+msgstr "امکانات"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__rate_plan_id
+msgid "Rate Plan ID"
+msgstr ""
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__rating_ids
 msgid "Ratings"
-msgstr ""
+msgstr "امتیازات"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__reference_number
 msgid "Reference Number"
 msgstr "شماره مرجع"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__lamasoo_hotel_booking_id
+msgid "Related Lamasoo Hotel Booking record"
+msgstr ""
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
@@ -518,9 +934,34 @@ msgid "Responsible User"
 msgstr "کاربر مسئول"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__room_type_title
+msgid "Room Type"
+msgstr "نوع اتاق"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__room_type_external_id
+msgid "Room Type ID"
+msgstr ""
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr "خطای ارسال پیامک"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__hotel_name
+msgid "Selected hotel name"
+msgstr "نام هتل انتخاب شده"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__rate_plan_title
+msgid "Selected rate plan (meal type)"
+msgstr "امکانات انتخاب شده (نوع وعده غذایی)"
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__room_type_title
+msgid "Selected room type"
+msgstr "نوع اتاق انتخاب شده"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
@@ -571,6 +1012,21 @@ msgid "Total Guests"
 msgstr "تعداد مهمانان"
 
 #. module: darman_booking_simple
+#: model:ir.model.fields,field_description:darman_booking_simple.field_darman_booking__total_price
+msgid "Total Hotel Price"
+msgstr ""
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__total_price
+msgid "Total hotel price for entire stay"
+msgstr ""
+
+#. module: darman_booking_simple
+#: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__child_count
+msgid "Total number of children (aged 0 to 12 years)"
+msgstr "تعداد کودکان (بین 0 تا 11 سال)"
+
+#. module: darman_booking_simple
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__total_guests
 msgid "Total number of guests"
 msgstr "تعداد کل مهمانان"
@@ -579,6 +1035,15 @@ msgstr "تعداد کل مهمانان"
 #: model:ir.model.fields,help:darman_booking_simple.field_darman_booking__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "نوع فعالیت استثنایی در رکورد."
+
+#. module: darman_booking_simple
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_1__1
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_2__1
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_3__1
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_4__1
+#: model:ir.model.fields.selection,name:darman_booking_simple.selection__darman_booking__child_age_5__1
+msgid "Under 1 year"
+msgstr "زیر 1 سال"
 
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_wizard__vat
@@ -598,7 +1063,7 @@ msgstr "تاریخچه ارتباطات وب‌سایت"
 #. module: darman_booking_simple
 #: model:ir.model.fields,field_description:darman_booking_simple.field_daarman_pre_invoice_line_wizard__wizard_id
 msgid "Wizard"
-msgstr ""
+msgstr "ویزارد"
 
 #. module: darman_booking_simple
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
@@ -629,6 +1094,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:darman_booking_simple.website_page_portal_simple_booking_ir_ui_view
 msgid "گروه مالی بانک پاسارگاد"
 msgstr ""
+
+#. module: darman_booking_simple
+#: model_terms:ir.ui.view,arch_db:darman_booking_simple.view_darman_booking_form
+msgid "🏨 Search Hotel"
+msgstr "جستجوی هتل 🏨"
+
 
 
 
@@ -763,3 +1234,9 @@ msgstr "سرویس \"صدور فاکتور\" یافت نشد. لطفا ماژو�
 #: code:addons/darman_booking_simple/models/booking.py:0
 msgid "Invoice issuance requested%s"
 msgstr "درخواست صدور فاکتور ارسال شد%s"
+
+#. module: darman_booking_simple
+#. odoo-python
+#: code:addons/darman_booking_simple/models/booking.py:0
+msgid "Hotel Availability Search"
+msgstr "جستجو هتل"

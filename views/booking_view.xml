@@ -22,12 +22,12 @@
         <field name="arch" type="xml">
             <form string="Booking Form">
                 <header>
-                    <button name="action_open_hotel_search" type="object" string="🏨 Search Hotel" class="btn-primary" invisible="state != 'draft'"/>
                     <button name="action_accept" type="object" string="Confirm" class="btn-primary oe_highlight" invisible="state not in('draft')"/>
                     <button name="action_decline" type="object" string="Decline" invisible="state not in('draft','confirmed')"/>
-                    <button name="action_send_invoice" type="object" string="Send Invoice" class="btn-primary" invisible="state != 'confirmed'"/>
+                    <button name="action_send_invoice" type="object" string="Send Invoice" class="btn-primary" invisible="state != 'confirmed' or not lamasoo_hotel_booking_id"/>
                     <button name="action_mark_done" type="object" string="Mark Done" invisible="state != 'invioced'"/>
                     <button name="action_set_to_draft" type="object" string="Reset to Draft" invisible="state != 'cancelled'"/>
+                    <button name="action_open_hotel_search" type="object" string="🏨 Search Hotel" class="btn-primary" invisible="state != 'confirmed'"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
@@ -53,12 +53,13 @@
                             <field name="total_guests"/>
                         </group>
                         <group string="Hotel Booking Information" invisible="not hotel_id">
+                            <field name="lamasoo_hotel_booking_id" readonly="1"/>
                             <field name="hotel_name" readonly="1"/>
                             <field name="hotel_city_id" readonly="1"/>
                             <field name="room_type_title" readonly="1"/>
                             <field name="rate_plan_title" readonly="1"/>
                             <field name="price_to_pay" readonly="1"/>
-                            <field name="total_price" readonly="1"/>
+                            <!-- <field name="total_price" readonly="1"/> -->
                             <field name="currency" readonly="1"/>
                         </group>
                         <group>
